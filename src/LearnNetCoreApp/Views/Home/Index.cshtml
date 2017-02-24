@@ -1,0 +1,20 @@
+﻿@model LearnNetCoreApp.ViewModels.HomePageViewModel
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn .Net Core</title>
+</head>
+<body>
+    <h1>@Model.CurrentMessage</h1>
+    <table>
+        @foreach (var restaurant in Model.Restaurants)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("Visualiser", "Details", new { id = restaurant.Id });
+                </td>
+                <td>@restaurant.Name</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
